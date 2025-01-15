@@ -1,0 +1,44 @@
+    /* Pozadina tela */
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('Assets/Images/Backgroubnd.png');
+        background-size: cover;
+        background-position: center;
+        font-family: 'Arial', sans-serif;
+    }
+  
+    /* Wrapper za serije */
+    .series-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centriranje elemenata po sredini */
+        padding: 20px 0;
+    }
+    
+    /* Svaka serija */
+    .series {
+        width: auto; /* Automatska širina slike */
+        max-width: 90%; /* Maksimalna širina (da se ne preklapaju sa stranicama) */
+        height: auto; /* Automatska visina slike */
+        cursor: pointer; /* Ruka pri hoveru */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #left-triangle {
+        clip-path: polygon(60% 0%, 0% 100%, 100% 100%);
+        -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+      }
+
+    #right-triangle {
+        clip-path: polygon(60% 0%, 0% 100%, 100% 100%);
+        -webkit-clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+        margin-top: -320px;
+      }
+    /*
+    
+    /* Hover efekat */
+    .series:hover {
+        transform: scale(1.05); /* Povećanje na hover */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Efekat senke */
+  }
