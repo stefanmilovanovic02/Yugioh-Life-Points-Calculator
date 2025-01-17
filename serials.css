@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('Assets/Images/Background.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    display: grid;
+    grid-template-columns: 390px 660px 390px;
+    gap: 16px;
+    width: 1440px;
+    height: auto;
+    padding-top: 70px;
+}
+/* General container styling */
+.left, .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent; /* Uklanja pozadinu */
+}
+
+/* Player images */
+.left img, .right img {
+    max-width: 100%; /* Prilagodljiva veličina slike */
+    max-height: 500px; /* Postavljanje maksimalne visine za slike */
+    object-fit: contain; /* Održava proporcije slike */
+    display: none; /* Slika je vidljiva samo kada se igrač selektuje */
+    border-radius: 8px; /* Blago zaobljeni uglovi za estetiku */
+}
+
+/* Character grid in the middle section */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    justify-items: center; /* Centriranje karaktera u mreži */
+}
+
+/* Individual character styling */
+.character {
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.character img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.character:hover {
+    transform: scale(1.1);
+}
+
+/* Selected player container */
+.selected {
+    border: 3px solid #f00; /* Naglašava selektovani karakter */
+}
+
+/* Button styling */
+.buttons {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+    margin-left: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    background-color: #444;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.dugmici{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.logo{
+    max-width: 241px !important;
+    max-height: 134px !important;
+    margin-left: 220px;
+}
+
+#player1-name{
+    background-color: #124174;
+    margin-top: 0px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#player2-name{
+    background-color: #6E1927;
+    margin-top: 0px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

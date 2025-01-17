@@ -2,7 +2,7 @@
     body {
         margin: 0;
         padding: 0;
-        background-image: url('Assets/Images/Backgroubnd.png');
+        background-image: url('Assets/Images/Background.png');
         background-size: cover;
         background-position: center;
         font-family: 'Arial', sans-serif;
@@ -42,3 +42,5 @@
         transform: scale(1.05); /* Povećanje na hover */
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Efekat senke */
   }
+
+
