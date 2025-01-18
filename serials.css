@@ -15,9 +15,10 @@ body {
     grid-template-columns: 390px 660px 390px;
     gap: 16px;
     width: 1440px;
-    height: auto;
+    height: 100vh;
     padding-top: 70px;
 }
+
 /* General container styling */
 .left, .right {
     display: flex;
@@ -93,8 +94,14 @@ button:hover {
     margin-top: 24px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
+}
+
+.dugmicii{
+    padding-top: 250px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
 }
 
 
