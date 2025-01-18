@@ -8,16 +8,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 .wrapper {
     display: flex;
-    flex-direction: column; /* Elementi idu jedan ispod drugog */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     gap: 16px; /* Razmak između sadržaja i dugmića */
-    padding-top: 20px; /* Razmak od vrha za logo */
 }
 
 .container {
@@ -25,8 +22,7 @@ body {
     grid-template-columns: 390px 660px 390px;
     gap: 16px;
     width: 1440px;
-    max-height: calc(100vh); /* Ograničava visinu da logo ostane vidljiv */
-    margin-top: 10%;
+    margin-top: 2%;
  
 }
 
@@ -120,6 +116,7 @@ button:hover {
     max-width: 241px !important;
     max-height: 134px !important;
     margin-left: 220px;
+    margin-bottom: 16px;
 }
 
 #player1-name{
