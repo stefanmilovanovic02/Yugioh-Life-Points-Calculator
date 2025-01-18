@@ -10,13 +10,24 @@ body {
     align-items: center;
     height: 100vh;
 }
+.wrapper {
+    display: flex;
+    flex-direction: column; /* Elementi idu jedan ispod drugog */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 16px; /* Razmak između sadržaja i dugmića */
+    padding-top: 20px; /* Razmak od vrha za logo */
+}
+
 .container {
     display: grid;
     grid-template-columns: 390px 660px 390px;
     gap: 16px;
     width: 1440px;
-    height: 100vh;
-    padding-top: 70px;
+    max-height: calc(100vh); /* Ograničava visinu da logo ostane vidljiv */
+    margin-top: 10%;
+ 
 }
 
 /* General container styling */
@@ -43,6 +54,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 16px;
     justify-items: center; /* Centriranje karaktera u mreži */
+    
 }
 
 /* Individual character styling */
@@ -90,15 +102,14 @@ button:hover {
     background-color: #555;
 }
 
-.dugmici{
-    margin-top: 24px;
+.dugmici {
     display: flex;
-    justify-content: center;
-    align-items: center;  
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .dugmicii{
-    padding-top: 250px !important;
     display: flex;
     justify-content: center;
     align-items: center;  
@@ -131,4 +142,4 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 

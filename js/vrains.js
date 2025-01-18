@@ -1,7 +1,7 @@
 // Serial Script
 // Fetch all characters from folder dynamically
 const characters = [
-   { name: "AI", img: "Assets/Images/Characters/Vrains/AI.png" },
+  { name: "AI", img: "Assets/Images/Characters/Vrains/AI.png" },
   { name: "Akira Zaizen", img: "Assets/Images/Characters/Vrains/Akira Zaizen.png" },
   { name: "Blue Angel", img: "Assets/Images/Characters/Vrains/Blue Angel.png" },
   { name: "Blue Gal", img: "Assets/Images/Characters/Vrains/Blue Gal.png" },

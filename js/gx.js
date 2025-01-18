@@ -13,7 +13,6 @@ const characters = [
   { name: "Chancellor Sheppard", img: "Assets/Images/Characters/GX/Chancellor Sheppard.png" },
   { name: "Chazz Princeton", img: "Assets/Images/Characters/GX/Chazz Princeton.png" },
   { name: "Chumley Huffington", img: "Assets/Images/Characters/GX/Chumley Huffington.png" },
-  { name: "Dr. Vellian Crowler", img: "Assets/Images/Characters/GX/Dr. Vellian Crowler.png" },
   { name: "Jaden Yuki", img: "Assets/Images/Characters/GX/Jaden Yuki.png" },
   { name: "Jesse Anderson", img: "Assets/Images/Characters/GX/Jesse Anderson.png" },
   { name: "Jim Crocodile Cook", img: "Assets/Images/Characters/GX/Jim Crocodile Cook.png" },
@@ -26,6 +25,7 @@ const characters = [
   { name: "Thelonius Viper", img: "Assets/Images/Characters/GX/Thelonius Viper.png" },
   { name: "Titan", img: "Assets/Images/Characters/GX/Titan.png" },
   { name: "Tyranno Hassleberry", img: "Assets/Images/Characters/GX/Tyranno Hassleberry.png" },
+  { name: "Vellian Crowler", img: "Assets/Images/Characters/GX/Vellian Crowler.png" },
   { name: "Yubel", img: "Assets/Images/Characters/GX/Yubel.png" },
   { name: "Zane Truesdale", img: "Assets/Images/Characters/GX/Zane Truesdale.png" },
 ];

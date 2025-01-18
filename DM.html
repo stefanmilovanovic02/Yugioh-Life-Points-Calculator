@@ -7,67 +7,70 @@
     <link rel="stylesheet" href="serials.css">
 </head>
 <body>
-    <div class="big-container">
-    <div class="container">
-        <!-- Left section -->
-        <div class="left">
-            <img id="player1-image" src="" alt="Player 1" style="max-width: 100%; display: none;">
-            <h2 id="player1-name">P1: None</h2>
-        </div>
+    <!-- Glavni wrapper za sadržaj -->
+    <div class="wrapper">
+        <div class="container">
+            <!-- Left section -->
+            <div class="left">
+                <img id="player1-image" src="" alt="Player 1" style="max-width: 100%; display: none;">
+                <h2 id="player1-name">P1: None</h2>
+            </div>
 
-        <!-- Middle section -->
-        <div class="middle">
-            <a href="index.html">
-                <img src="Assets/Images/Logos/DM Logo.png" alt="Yu-Gi-Oh Duel Monster" class="logo">
-            </a>
-            <div class="character-grid" id="character-grid">
-                <!-- Characters will be dynamically inserted here -->
+            <!-- Middle section -->
+            <div class="middle">
+                <a href="index.html">
+                    <img src="Assets/Images/Logos/DM Logo.png" alt="Yu-Gi-Oh Duel Monster" class="logo">
+                </a>
+                <div class="character-grid" id="character-grid">
+                    <!-- Characters will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Right section -->
+            <div class="right">
+                <img id="player2-image" src="" alt="Player 2" style="max-width: 100%; display: none;">
+                <h2 id="player2-name">P2: None</h2>
             </div>
         </div>
 
-        <!-- Right section -->
-        <div class="right">
-            <img id="player2-image" src="" alt="Player 2" style="max-width: 100%; display: none;">
-            <h2 id="player2-name">P2: None</h2>
+        <!-- Dugmići wrapovani ispod sadržaja -->
+        <div class="dugmici">
+            <div class="options">
+                <!-- Dropdowns -->
+                <label for="life-points">Life Points:</label>
+                <select id="life-points">
+                    <option value="8000">8000</option>
+                    <option value="4000">4000</option>
+                </select>
+
+                <label for="series">Series:</label>
+                <select id="series">
+                    <option value="dm">DM</option>
+                    <option value="gx">GX</option>
+                    <option value="5ds">5Ds</option>
+                    <option value="zexal">ZEXAL</option>
+                    <option value="arcv">ARC-V</option>
+                    <option value="vrains">VRAINS</option>
+                </select>
+
+                <label for="timer">Timer:</label>
+                <select id="timer">
+                    <option value="260">260 sec</option>
+                    <option value="160">160 sec</option>
+                    <option value="120">120 sec</option>
+                    <option value="80">80 sec</option>
+                    <option value="60">60 sec</option>
+                    <option value="30">30 sec</option>
+                    <option value="20">20 sec</option>
+                </select>
+            </div>
+
+            <div class="buttons">
+                <button id="start-button">Start</button>
+                <button id="reset-button">Reset</button>
+            </div>
         </div>
     </div>
-    <div class="dugmici">
-        <div class="options">
-            <!-- Dropdowns -->
-            <label for="life-points">Life Points:</label>
-            <select id="life-points">
-                <option value="8000">8000</option>
-                <option value="4000">4000</option>
-            </select>
-
-            <label for="series">Series:</label>
-            <select id="series">
-                <option value="dm">DM</option>
-                <option value="gx">GX</option>
-                <option value="5ds">5Ds</option>
-                <option value="zexal">ZEXAL</option>
-                <option value="arcv">ARC-V</option>
-                <option value="vrains">VRAINS</option>
-            </select>
-
-            <label for="timer">Timer:</label>
-            <select id="timer">
-                <option value="260">260 sec</option>
-                <option value="160">160 sec</option>
-                <option value="120">120 sec</option>
-                <option value="80">80 sec</option>
-                <option value="60">60 sec</option>
-                <option value="30">30 sec</option>
-                <option value="20">20 sec</option>
-            </select>
-        </div>
-
-        <div class="buttons">
-            <button id="start-button">Start</button>
-            <button id="reset-button">Reset</button>
-        </div>
-    </div>
-</div>
     <script src="js/script.js"></script>
 </body>
 </html>
