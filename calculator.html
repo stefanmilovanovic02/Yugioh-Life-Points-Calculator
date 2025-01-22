@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+  <div class="calculator-container">
+    <!-- Player 1 Section -->
+    <div class="player-section">
+      <img id="player1-image" class="character-image" style="display: none;" alt="Player 1">
+      <div id="player1-life-points" class="life-points">2000</div>
+      <div class="buttons">
+        <button onclick="adjustLifePoints('player1', -50)">- 50</button>
+        <button onclick="adjustLifePoints('player1', -100)">- 100</button>
+        <button onclick="adjustLifePoints('player1', -1000)">- 1000</button>
+        <button onclick="adjustLifePoints('player1', 50)">+ 50</button>
+        <button onclick="adjustLifePoints('player1', 100)">+ 100</button>
+        <button onclick="adjustLifePoints('player1', 1000)">+ 1000</button>
+      </div>
+    </div>
+
+    <!-- Controls Section -->
+    <div class="controls">
+      <button onclick="restartGame()">Restart</button>
+      <button onclick="rollDice()">Roll Dice</button>
+      <button onclick="coinToss()">Coin Toss</button>
+      <div id="timer">00:00</div>
+    </div>
+
+    <!-- Player 2 Section -->
+    <div class="player-section">
+      <img id="player2-image" style="display: none;" alt="Player 2">
+      <div id="player2-life-points" class="life-points">2000</div>
+      <div class="buttons">
+        <button onclick="adjustLifePoints('player2', -50)">- 50</button>
+        <button onclick="adjustLifePoints('player2', -100)">- 100</button>
+        <button onclick="adjustLifePoints('player2', -1000)">- 1000</button>
+        <button onclick="adjustLifePoints('player2', 50)">+ 50</button>
+        <button onclick="adjustLifePoints('player2', 100)">+ 100</button>
+        <button onclick="adjustLifePoints('player2', 1000)">+ 1000</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/calculator.js"></script>
+</body>
+</html>

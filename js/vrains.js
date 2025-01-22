@@ -89,9 +89,9 @@ document.getElementById("start-button").addEventListener("click", () => {
     return;
   }
 
-  // Redirect to calculator page with settings passed as query params
-  const url = `calculator.html?lp=${lifePoints}&series=${series}&timer=${timer}`;
-  window.location.href = url;
+       // Dodavanje igrača u query string
+        const url = `calculator.html?lp=${lifePoints}&series=${series}&timer=${timer}&p1Name=${encodeURIComponent(player1.name)}&p1Img=${encodeURIComponent(player1.img)}&p2Name=${encodeURIComponent(player2.name)}&p2Img=${encodeURIComponent(player2.img)}`;
+        window.location.href = url;
 });
 
 // Reset button logic

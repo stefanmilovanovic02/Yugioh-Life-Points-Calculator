@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .player-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .character-image {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .life-points {
+    font-size: 2rem;
+    color: yellow;
+    background: url('life-points-background.png') no-repeat center center / contain;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .buttons button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttons button:hover {
+    background-color: #555;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .controls button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #555;
+    border: 1px solid #666;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    background-color: #777;
+  }
+  

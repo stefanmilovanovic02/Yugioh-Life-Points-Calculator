@@ -50,20 +50,14 @@ function renderCharacters() {
         // Postavljanje igrača 1
         player1 = character;
         player1Name.textContent = `P1: ${character.name}`;
-        player1Image.src = `Assets/Images/Characters Org/GX/${character.name.replace(
-          / /g,
-          "_"
-        )}.webp`;
+        player1Image.src = `Assets/Images/Characters Org/GX/${character.name.replace(/ /g,"_")}.webp`;
         player1Image.style.display = "block";
         div.classList.add("selected");
       } else if (!player2 && player1 !== character) {
         // Postavljanje igrača 2
         player2 = character;
         player2Name.textContent = `P2: ${character.name}`;
-        player2Image.src = `Assets/Images/Characters Org/GX/${character.name.replace(
-          / /g,
-          "_"
-        )}.webp`;
+        player2Image.src = `Assets/Images/Characters Org/GX/${character.name.replace(/ /g, "_")}.webp`;
         player2Image.style.display = "block";
         div.classList.add("selected");
       } else {
@@ -99,8 +93,8 @@ document.getElementById("start-button").addEventListener("click", () => {
     return;
   }
 
-  // Redirect to calculator page with settings passed as query params
-  const url = `calculator.html?lp=${lifePoints}&series=${series}&timer=${timer}`;
+  // Dodavanje igrača u query string
+  const url = `calculator.html?lp=${lifePoints}&series=${series}&timer=${timer}&p1Name=${encodeURIComponent(player1.name)}&p1Img=${encodeURIComponent(player1.img)}&p2Name=${encodeURIComponent(player2.name)}&p2Img=${encodeURIComponent(player2.img)}`;
   window.location.href = url;
 });
 
