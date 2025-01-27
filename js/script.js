@@ -118,3 +118,4 @@ document.querySelectorAll(".series").forEach((series) => {
                 char.classList.remove("selected");
             });
         });
+

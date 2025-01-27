@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
   }
-  
+
   .calculator-container {
     display: flex;
     flex-direction: column;
@@ -31,7 +31,6 @@ body {
   .life-points {
     font-size: 2rem;
     color: yellow;
-    background: url('life-points-background.png') no-repeat center center / contain;
     width: 150px;
     height: 60px;
     display: flex;
@@ -72,6 +71,116 @@ body {
   .controls button:hover {
     background-color: #777;
   }
+
+  /* Default animacija */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    color: yellow;
+  }
+  50% {
+    transform: scale(1.2);
+    color: red;
+  }
+  100% {
+    transform: scale(1);
+    color: yellow;
+  }
+}
+
+/* Animacije i dizajn po serijalima */
+/*DM*/
+/* DM specifična pozadina */
+.dm-life-points {
+  background: url('Assets/Images/Life Points/dmlfbackground.webp') no-repeat center center / cover;
+  font-family: 'Times New Roman', serif;
+}
+
+.dm-animation {
+  animation: pulse 0.5s ease-in-out;
+  color: yellow;
+}
+
+/* GX Life Points */
+.gx-life-points {
+  background: url('Assets/Images/Life Points/gxlf.png') no-repeat center center / cover;
+  font-family: 'Verdana', sans-serif;
+  color: #ffd700;
+}
+/* Progres bar */
+.gx-container {
+  width: 100%;
+  height: 20px;
+  margin-top: 10px;
+  background-color: #333; /* Pozadinska boja bara */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gx-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gx-bar-fill {
+  height: 100%;
+  width: 100%; /* Početno stanje - pun bar */
+  background-color: green;
+  transition: width 0.5s ease, background-color 0.5s ease; /* Animacija promene širine i boje */
+}
+
+/* Promena boje */
+.gx-bar-fill.low {
+  background-color: red;
+}
+.gx-bar-fill.medium {
+  background-color: yellow;
+}
+.gx-bar-fill.high {
+  background-color: green;
+}
+
+/* Animacija za GX */
+.gx-animation {
+  animation: pulse-gx 1s infinite;
+}
+
+/* Animacija */
+@keyframes pulse-gx {
+  0% {
+    transform: scale(1);
+    color: cyan;
+  }
+  50% {
+    transform: scale(1.1);
+    color: darkblue;
+  }
+  100% {
+    transform: scale(1);
+    color: cyan;
+  }
+}
+
+.Sds-animation {
+  animation: pulse 1s ease-in-out;
+  color: green;
+}
+
+.zexal-animation {
+  animation: pulse 0.6s ease-in-out;
+  color: orange;
+}
+
+.arcv-animation {
+  animation: pulse 0.8s ease-in-out;
+  color: pink;
+}
+
+.vrains-animation {
+  animation: pulse 0.5s ease-in-out;
+  color: cyan;
+}
 
   
   

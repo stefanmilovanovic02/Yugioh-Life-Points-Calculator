@@ -8,10 +8,20 @@
 </head>
 <body>
   <div class="calculator-container">
+    <div class="home">
+      <a href="index.html">
+        <img src="Assets/Images/Logos/DM Logo.png" width="250px" height="150px" alt="Dm Logo">
+      </a>
+    </div>
     <!-- Player 1 Section -->
     <div class="player-section">
       <img id="player1-image" class="character-image" style="display: none;" alt="Player 1">
-      <div id="player1-life-points" class="life-points">2000</div>
+      <div id="player1-life-points" class="life-points">8000</div>
+      <div class="gx-container">
+        <div id="gx-progress-bar" class="gx-progress-bar">
+          <div id="gx-bar-fill" class="gx-bar-fill"></div>
+        </div>
+      </div>      
       <div class="buttons">
         <button onclick="adjustLifePoints('player1', -50)">- 50</button>
         <button onclick="adjustLifePoints('player1', -100)">- 100</button>
@@ -22,18 +32,32 @@
       </div>
     </div>
 
-    <!-- Controls Section -->
     <div class="controls">
+      <select id="series-selector" onchange="updateSeries()">
+        <option value="serial">Select Serial</option>
+        <option value="dm">DM (Duel Monsters)</option>
+        <option value="gx">GX</option>
+        <option value="Sds">SD's</option>
+        <option value="zexal">ZEXAL</option>
+        <option value="arcv">ARC-V</option>
+        <option value="vrains">VRAINS</option>
+      </select>
       <button onclick="restartGame()">Restart</button>
       <button onclick="rollDice()">Roll Dice</button>
       <button onclick="coinToss()">Coin Toss</button>
       <div id="timer">00:00</div>
     </div>
+    
 
     <!-- Player 2 Section -->
     <div class="player-section">
       <img id="player2-image" style="display: none;" alt="Player 2">
-      <div id="player2-life-points" class="life-points">2000</div>
+      <div id="player2-life-points" class="life-points">8000</div>
+      <div class="gx-container">
+        <div id="gx-progress-bar" class="gx-progress-bar">
+          <div id="gx-bar-fill" class="gx-bar-fill"></div>
+        </div>
+      </div>   
       <div class="buttons">
         <button onclick="adjustLifePoints('player2', -50)">- 50</button>
         <button onclick="adjustLifePoints('player2', -100)">- 100</button>
@@ -44,6 +68,7 @@
       </div>
     </div>
   </div>
+  
 
   <script src="js/calculator.js"></script>
 </body>
