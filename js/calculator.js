@@ -131,7 +131,7 @@ function updateSeries() {
 // Funkcija za promenu životnih poena i reprodukciju zvuka
 function adjustLifePoints(player, change) {
   const lifePointsElement = document.getElementById(`${player}-life-points`);
-  const progressBarFill = document.getElementById("gx-bar-fill");
+  let progressBarFill = document.getElementById("gx-bar-fill");
 
   // Trenutni life poeni
   let currentPoints = parseInt(lifePointsElement.textContent);
@@ -174,6 +174,12 @@ function adjustLifePoints(player, change) {
       lifePointsElement.textContent = currentPoints;
 
       // Ažuriranje progress bara
+      if(player === "player1"){
+        progressBarFill = document.getElementById("gx-bar-fill");
+      }
+      else {
+        progressBarFill = document.getElementById("gx-bar-fill2");
+      }
       const percentage = (currentPoints / 8000) * 100;
       progressBarFill.style.width = `${percentage}%`;
 
@@ -190,12 +196,8 @@ function adjustLifePoints(player, change) {
       requestAnimationFrame(animatePoints);
     }
   };
-
-
   // Pokretanje animacije
   animatePoints();
-
-
 
     // Promena boje na osnovu nivoa
     if (percentage > 50) {
@@ -233,12 +235,6 @@ function animateLifePoints(element) {
   setTimeout(() => element.classList.remove(animationClass), 500);
 }
 
-// Restart game function
-function restartGame() {
-  document.getElementById("player1-life-points").textContent = "8000";
-  document.getElementById("player2-life-points").textContent = "8000";
-}
-
 // Roll dice function
 function rollDice() {
   const result = Math.floor(Math.random() * 6) + 1; // Dice roll between 1 and 6
@@ -251,4 +247,44 @@ function coinToss() {
   alert(`It's ${result}!`);
 }
 
+// Restart game function
+function restartGame() {
+  document.getElementById("player1-life-points").textContent = "8000";
+  document.getElementById("player2-life-points").textContent = "8000";
+}
 
+
+// ZVUKOVI KARAKTERA
+const characterAudio = {
+  Alister: {
+    start: "Assets/Sounds/",
+    losePoints: "Assets/Sounds/Alister_losePoints.mp3",
+    win: "Assets/Sounds/Alister_win.mp3",
+    lose: "Assets/Sounds/Alister_lose.mp3",
+  },
+  "Yami Yugi": {
+    start: "Assets/Sounds/Yami_Yugi_start.mp3",
+    losePoints: "Assets/Sounds/Yami_Yugi_losePoints.mp3",
+    win: "Assets/Sounds/Yami_Yugi_win.mp3",
+    lose: "Assets/Sounds/Yami_Yugi_lose.mp3",
+  },
+  "Seto Kaiba": {
+    start: "Assets/Sounds/Seto_Kaiba_start.mp3",
+    losePoints: "Assets/Sounds/Seto_Kaiba_losePoints.mp3",
+    win: "Assets/Sounds/Seto_Kaiba_win.mp3",
+    lose: "Assets/Sounds/Seto_Kaiba_lose.mp3",
+  },
+  // Dodaj ostale likove i njihove audio fajlove
+};
+
+
+function playAudio(player, event) {
+  const character = player === "player1" ? player1 : player2;
+  if (!character) return;
+
+  const audioSrc = characterAudio[character.name]?.[event];
+  if (audioSrc) {
+    const audio = new Audio(audioSrc);
+    audio.play();
+  }
+}
