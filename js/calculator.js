@@ -148,12 +148,13 @@ function adjustLifePoints(player, change) {
 
   // Inkrement ili dekrement u zavisnosti od znaka promene
   const increment = Math.sign(change) * step;
-  const duration = 500; // Ukupno trajanje animacije
-  const stepTime = Math.max(duration / totalChange, 20); // Osigurava brzinu
 
-  let current = currentPoints;
+  // Resetovanje animacije kako bi uvek radila
+  lifePointsElement.classList.remove("pulse");
+  void lifePointsElement.offsetWidth; // Forsira reflow za CSS animaciju
+  lifePointsElement.classList.add("pulse");
 
-  // Reprodukcija zvuka za trenutni serijal
+// Reprodukcija zvuka za trenutni serijal
   const selectedSeries = document.getElementById("series-selector").value;
   const seriesSound = seriesConfig[selectedSeries]?.sound;
 
@@ -162,21 +163,38 @@ function adjustLifePoints(player, change) {
     audio.play();
   }
 
-  const counterInterval = setInterval(() => {
-    current = Math.min(Math.max(current + increment, 0), newPoints);
-    lifePointsElement.textContent = current;
 
-    // Ažuriranje progres bara
-    if (progressBarFill) {
-      const percentage = (current / 8000) * 100;
+  // Animacija promene poena
+  const animatePoints = () => {
+    if (currentPoints !== newPoints) {
+      currentPoints += increment;
+      if ((increment > 0 && currentPoints > newPoints) || (increment < 0 && currentPoints < newPoints)) {
+        currentPoints = newPoints; // Osigurava da ne pređe granicu
+      }
+      lifePointsElement.textContent = currentPoints;
+
+      // Ažuriranje progress bara
+      const percentage = (currentPoints / 8000) * 100;
       progressBarFill.style.width = `${percentage}%`;
-    }
 
-    // Zaustavi animaciju kada dostigne ciljne poene
-    if (current === newPoints) {
-      clearInterval(counterInterval);
+      // Promena boje progress bara
+      if (percentage > 50) {
+        progressBarFill.style.backgroundColor = "green";
+      } else if (percentage > 20) {
+        progressBarFill.style.backgroundColor = "orange";
+      } else {
+        progressBarFill.style.backgroundColor = "red";
+      }
+
+      // Nastavi animaciju
+      requestAnimationFrame(animatePoints);
     }
-  }, stepTime);
+  };
+
+
+  // Pokretanje animacije
+  animatePoints();
+
 
 
     // Promena boje na osnovu nivoa

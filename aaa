@@ -1,0 +1,55 @@
+// Funkcija za promenu životnih poena i reprodukciju zvuka
+function adjustLifePoints(player, change) {
+  const lifePointsElement = document.getElementById(`${player}-life-points`);
+  const progressBarFill = document.getElementById("gx-bar-fill");
+
+  // Trenutni life poeni
+  let currentPoints = parseInt(lifePointsElement.textContent);
+  let newPoints = Math.max(0, currentPoints + change); // Osigurava da ne ode ispod 0
+
+  // Određivanje brzine animacije
+  const totalChange = Math.abs(change);
+  let step = 1; // Podrazumevana promena po inkrementu
+  if (totalChange >= 1000) {
+    step = 20; // Brža animacija za velike promene
+  } else if (totalChange >= 100) {
+    step = 2; // Srednja brzina za promene srednje veličine
+  }
+
+  // Inkrement ili dekrement u zavisnosti od znaka promene
+  const increment = Math.sign(change) * step;
+
+  // Resetovanje animacije kako bi uvek radila
+  lifePointsElement.classList.remove("pulse");
+  void lifePointsElement.offsetWidth; // Forsira reflow za CSS animaciju
+  lifePointsElement.classList.add("pulse");
+
+  // Animacija promene poena
+  const animatePoints = () => {
+    if (currentPoints !== newPoints) {
+      currentPoints += increment;
+      if ((increment > 0 && currentPoints > newPoints) || (increment < 0 && currentPoints < newPoints)) {
+        currentPoints = newPoints; // Osigurava da ne pređe granicu
+      }
+      lifePointsElement.textContent = currentPoints;
+
+      // Ažuriranje progress bara
+      const percentage = (currentPoints / 8000) * 100;
+      progressBarFill.style.width = `${percentage}%`;
+
+      // Promena boje progress bara
+      if (percentage > 50) {
+        progressBarFill.style.backgroundColor = "green";
+      } else if (percentage > 20) {
+        progressBarFill.style.backgroundColor = "orange";
+      } else {
+        progressBarFill.style.backgroundColor = "red";
+      }
+
+      // Nastavi animaciju
+      requestAnimationFrame(animatePoints);
+    }
+  };
+
+  // Pokretanje animacije
+  animatePoints();
